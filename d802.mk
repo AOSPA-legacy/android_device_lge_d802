@@ -23,26 +23,6 @@ $(call inherit-product, device/lge/g2-common/g2.mk)
 # Inherit from the common Open Source product configuration
 $(call inherit-product, $(SRC_TARGET_DIR)/product/full_base_telephony.mk)
 
-PRODUCT_DEVICE := d802
-PRODUCT_NAME := full_d802
-PRODUCT_BRAND := LGE
-PRODUCT_MODEL := LG-D802
-PRODUCT_MANUFACTURER := lge
-PRODUCT_RESTRICT_VENDOR_FILES := false
-
 ## overlays
 DEVICE_PACKAGE_OVERLAYS += $(LOCAL_PATH)/overlay
-
-
-PRODUCT_PROPERTY_OVERRIDES += \
-	telephony.lteOnGsmDevice=1 \
-	ro.telephony.default_network=9
-
-PRODUCT_COPY_FILES += \
-	frameworks/native/data/etc/android.hardware.telephony.gsm.xml:system/etc/permissions/android.hardware.telephony.gsm.xml
-
-# NFC packages
-PRODUCT_PACKAGES += \
-    nfc_nci.g2 \
-    NfcNci
 
